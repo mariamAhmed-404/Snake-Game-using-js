@@ -1,0 +1,200 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#backgroundVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.771); /* Dark semi-transparent cover */
+    transition: background 0.3s;
+}
+
+.overlay:hover {
+    background: rgba(0, 0, 0, 0.7); /* Darker semi-transparent cover on hover */
+}
+
+#gameContainer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#gameBoard {
+    border: 2px solid #444444;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 30px #0FFF50; /* Shadow effect */
+    transition: background 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+#scoreText {
+    font-size: 2rem;
+    color: #fff;
+    margin-top: 10px;
+}
+
+#resetBtn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+#resetBtn:hover {
+    background: rgb(0, 0, 0);
+    color: #fff;
+}
+
+#soundControls {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#toggleSound,
+#muteSound {
+    padding: 8px 16px;
+    margin: 20px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+#toggleSound:hover,
+#muteSound:hover {
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+
+}
+#volumeControl {
+    /* Default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100px;
+    height: 10px;
+    background-color: #d1ffd6; 
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+/* Change the color of the volume control slider thumb */
+#volumeControl::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color:#0FFF50; 
+    cursor: pointer;
+    border:2px solid #0FFF50;
+    border-radius: 50%;
+}
+
+#volumeControl::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background-color: #000000; 
+    cursor: pointer;
+}
+#modeControls button {
+    padding: 8px 16px;
+    margin: 0px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+#modeControls button:hover {
+    background-color: rgb(0, 128, 70);
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    border: 2px solid #0FFF50;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 70px;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #0FFF50;
+
+}
+
+.modal-content button:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 10px;
+
+}

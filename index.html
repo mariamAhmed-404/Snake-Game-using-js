@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Snake Game</title>
+</head>
+<body>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>WELCOME TO SNAKE GAME</h2>
+            <button id="playButton">PLAY!</button>
+        </div>
+    </div>
+    <div class="video-container">
+        <video autoplay muted loop id="backgroundVideo">
+            <source src="videos/5943-187188345_small.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+        <div id="gameContainer">
+            <canvas id="gameBoard" width="500" height="500"></canvas>
+            <div id="scoreText">0</div>
+            <button id="resetBtn">Reset</button>
+            <div id="soundControls">
+                <button id="toggleSound" onclick="toggleBackgroundMusic()">Sound</button>
+                <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" onchange="adjustVolume()">
+                <button id="muteSound" onclick="toggleMute()">Mute</button>
+            </div>
+            <div id="modeControls">
+                <button onclick="setMode('classic')">Classic</button>
+                <button onclick="setMode('dark')">Dark</button>
+                <button onclick="setMode('neon')">Neon</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio elements -->
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="audios/2020-04-24_-_Arcade_Kid_-_FesliyanStudios.com_-_David_Renda.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="gameOverSound">
+        <source src="audios/2G7CF5V-gamers-fail-game.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="eatSound">
+        <source src="audios/mixkit-arcade-mechanical-bling-210.wav" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
